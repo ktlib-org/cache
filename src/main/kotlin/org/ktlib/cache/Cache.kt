@@ -1,15 +1,12 @@
 package org.ktlib.cache
 
-import org.ktlib.TypeRef
-import org.ktlib.fromJson
-import org.ktlib.lookup
-import org.ktlib.typeRef
+import org.ktlib.*
 
 /**
  * Interface for accessing a cache
  */
 interface Cache {
-    companion object : Cache by lookup()
+    companion object : Cache by lookupInstance()
 
     val connected: Boolean
     fun delete(key: String)
